@@ -30,7 +30,7 @@ spec:
             - name: cors.allowedOrigins
               value: "http://localhost:8077,http://localhost:8777,http://localhost:8765"
             - name: spring.datasource.url
-              value: jdbc:postgresql://postgresdb:5432/postgis
+              value: jdbc:postgresql://{{ .Values.postgres.name }}:{{ .Values.postgres.port }}/postgis
             - name: spring.datasource.password
               value: postgis
             - name: spring.jpa.database-platform
