@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: postgresdb
+  name: postgresdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: postgresdb
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.network/devhome-default: "true"
+        io.kompose.service: postgresdb
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_DB
+              value: postgis
+            - name: POSTGRES_PASSWORD
+              value: postgis
+            - name: POSTGRES_USER
+              value: postgis
+          image: postgis/postgis:16-master
+          imagePullPolicy: Always
+          name: postgresdb
+          ports:
+            - containerPort: 5432
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgresdb-claim0
+      restartPolicy: Always
+      volumes:
+        - name: postgresdb-claim0
+          persistentVolumeClaim:
+            claimName: postgres-pvc

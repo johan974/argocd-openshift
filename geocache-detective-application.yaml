@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: geocache-detective-app
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    path: geocache-detective
+    repoURL: https://github.com/johan974/argocd-openshift.git
+    targetRevision: HEAD
+  sources: []
+  project: my-apps
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

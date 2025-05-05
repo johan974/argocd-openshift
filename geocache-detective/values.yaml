@@ -1,0 +1,25 @@
+# Default values for helmconfig.
+
+appName: geocache-detective
+
+replicaCount: 1
+
+geocachedetectiveviewer:
+  name: geocachedetectiveviewer
+  image:
+    fulldigest5: solvedshared/geocachedetectiveviewer@sha256:b5c804d77b4451bcf553077525ee5e1a063bbab2781174cecf85b468f5f126e8
+    version: v20250416
+  service:
+    type: LoadBalancer
+    internalPort: 80
+    externalPort: 8765
+
+geocachedetectiveapi:
+  name: geocachedetectiveapi
+  image:
+    fulldigest6: solvedshared/geocachedetectiveapi@sha256:96d558d8ca9734311e2d70c032f0bd70216b2696e4c25dd5530efa5eb1509d6a
+    version: v20250417
+  service:
+    type: LoadBalancer
+    internalPort: 8777
+    externalPort: 8777
