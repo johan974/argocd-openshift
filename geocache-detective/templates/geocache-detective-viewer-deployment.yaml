@@ -5,7 +5,7 @@ metadata:
     io.kompose.service: {{ .Values.geocachedetectiveviewer.name }}
   name: {{ .Values.geocachedetectiveviewer.name }}
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       io.kompose.service: {{ .Values.geocachedetectiveviewer.name }}

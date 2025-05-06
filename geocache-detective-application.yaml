@@ -12,7 +12,7 @@ spec:
     repoURL: https://github.com/johan974/argocd-openshift.git
     targetRevision: HEAD
   sources: []
-  project: my-apps
+  project: default
   syncPolicy:
     automated:
       prune: true
