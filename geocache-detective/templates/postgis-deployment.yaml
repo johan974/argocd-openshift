@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: Always
           name: {{ .Values.postgres.name }}
           ports:
-            - containerPort: 5432
+            - containerPort: {{ .Values.postgres.componentPort }}
           resources: {}
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
