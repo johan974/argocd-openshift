@@ -15,7 +15,7 @@ geocachedetectiveviewer:
     externalPort: 8765
 
 geocachedetectiveapi:
-  name: geocachedetectiveapiv2
+  name: geocachedetectiveapi
   image:
     fulldigest6: solvedshared/geocachedetectiveapi@sha256:96d558d8ca9734311e2d70c032f0bd70216b2696e4c25dd5530efa5eb1509d6a
     version: v20250417
