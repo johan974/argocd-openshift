@@ -5,8 +5,8 @@ metadata:
 spec:
   ports:
     - name: "5432"
-      port: {{ .Values.postgres.port }}
-      targetPort: {{ .Values.postgres.port }}
+      port: {{ .Values.postgres.nodePort }}
+      targetPort: {{ .Values.postgres.componentPort }}
   selector:
     app: {{ .Values.postgres.name }}
   type: NodePort

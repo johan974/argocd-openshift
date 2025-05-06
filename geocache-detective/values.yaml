@@ -26,4 +26,5 @@ geocachedetectiveapi:
 
 postgres:
   name: postgis
-  port: 5432
+  componentPort: 5432
+  nodePort: 31432
