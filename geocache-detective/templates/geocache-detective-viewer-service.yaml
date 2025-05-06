@@ -11,7 +11,8 @@ spec:
   ports:
     - name: https
       port: {{ .Values.geocachedetectiveviewer.service.externalPort }}
+      nodePort: 30777
       targetPort: {{ .Values.geocachedetectiveviewer.service.internalPort }}
   selector:
     io.kompose.service: {{ .Values.geocachedetectiveviewer.name }}
-  type: LoadBalancer
+  type: NodePort
