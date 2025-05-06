@@ -30,13 +30,13 @@ spec:
             - name: cors.allowedOrigins
               value: "http://localhost:8077,http://localhost:8777,http://localhost:8765"
             - name: spring.datasource.url
-              value: jdbc:postgresql://postgres:5432/postgresdb
-            - name: spring.datasource.username
-              value: postgresuser
+              value: jdbc:postgresql://{{ .Values.postgres.name }}:{{ .Values.postgres.nodePort }}/postgis
             - name: spring.datasource.password
-              value: postgrespassword
+              value: postgis
             - name: spring.jpa.database-platform
               value: org.hibernate.dialect.PostgreSQLDialect
+            - name: spring.jpa.hibernate.database-platform
+              value: org.hibernate.spatial.dialect.postgis.PostgisDialect
             - name: spring.ai.openai.api-key
               valueFrom:
                 secretKeyRef:
