@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   source:
     path: geocache-detective
-    repoURL: http://gitea-gitea.apps-crc.testing/johan974/argocd-openshift.git
+    repoURL: http://gitea-gitea.apps-crc.testing/johan974/argocd-openshift-local.git
     targetRevision: HEAD
   sources: []
   project: default
