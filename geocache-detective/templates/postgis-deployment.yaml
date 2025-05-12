@@ -14,7 +14,6 @@ spec:
       labels:
         app: postgres
     spec:
-      # Use a privileged security context
       securityContext:
         fsGroup: 1000  # core group
       initContainers:
