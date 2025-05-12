@@ -13,6 +13,7 @@ geocachedetectiveviewer:
     type: NodePort
     internalPort: 80
     externalPort: 8765
+    nodePort: 8765
 
 geocachedetectiveapi:
   name: geocachedetectiveapi

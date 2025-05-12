@@ -7,6 +7,7 @@ metadata:
   labels:
     io.kompose.service: {{ .Values.geocachedetectiveviewer.name }}
   name: {{ .Values.geocachedetectiveviewer.name }}
+  namespace: default
 spec:
   ports:
     - name: https

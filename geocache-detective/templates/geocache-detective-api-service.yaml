@@ -8,6 +8,7 @@ metadata:
   labels:
     io.kompose.service: {{ .Values.geocachedetectiveapi.name }}
   name: {{ .Values.geocachedetectiveapi.name }}
+  namespace: default
 spec:
   ports:
     - name: https

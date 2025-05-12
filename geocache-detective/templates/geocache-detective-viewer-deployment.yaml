@@ -4,6 +4,7 @@ metadata:
   labels:
     io.kompose.service: {{ .Values.geocachedetectiveviewer.name }}
   name: {{ .Values.geocachedetectiveviewer.name }}
+  namespace: default
 spec:
   replicas: 1
   selector:

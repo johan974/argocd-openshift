@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ .Values.geocachedetectiveviewer.name }}
+  namespace: default
+spec:
+  to:
+    kind: Service
+    name: {{ .Values.geocachedetectiveviewer.name }}
+  port:
+    targetPort: {{ .Values.geocachedetectiveviewer.service.externalPort }}
